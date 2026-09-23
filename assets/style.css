@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600&display=swap");
+
+:root {
+  --canopy: #17352a;
+  --moss: #5b6b5e;
+  --mist: #e9f0e6;
+  --panel: #fbfdf9;
+  --line: #cbd8c7;
+  --leaf: #2f7d4f;
+  --leaf-bg: #dcefdc;
+  --tomato: #c8321f;
+  --tomato-bg: #fbe4df;
+  --ochre: #a8741a;
+  --ochre-bg: #f6ebd0;
+}
+
+.stApp { background: var(--mist); color: var(--canopy); }
+.stApp, .stApp p, .stApp label, .stApp li, .stApp button, .stApp input, .stApp textarea {
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.stApp .block-container { max-width: 1120px; padding-top: 2.5rem; }
+footer { visibility: hidden; }
+
+/* Header */
+.stApp .masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.stApp .masthead__text { flex: 1; min-width: 0; }
+.stApp .masthead__image {
+  width: 132px;
+  height: 132px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  box-shadow: 0 6px 18px rgba(23, 53, 42, 0.14);
+  flex-shrink: 0;
+}
+@media (max-width: 900px) {
+  .stApp .masthead { flex-direction: column; align-items: flex-start; }
+  .stApp .masthead__image { width: 100%; height: 160px; }
+}
+.stApp .masthead h1 {
+  font-family: "Young Serif", Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--canopy);
+  margin: 0 0 0.5rem;
+  padding: 0;
+}
+.stApp .masthead p { color: var(--moss); font-size: 1.05rem; max-width: 58ch; margin: 0 0 1.5rem; }
+
+/* The photo sits on a white card, like a pressed specimen */
+.stApp .st-key-leaf {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+}
+.stApp .st-key-leaf img { width: 100%; height: auto; display: block; border-radius: 6px; }
+.stApp .st-key-leaf [data-testid="stImageCaption"] { color: var(--moss); font-size: 0.85rem; text-align: left; }
+
+/* Empty state */
+.stApp .empty {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  border: 1px dashed #a9bca5;
+  border-radius: 10px;
+  padding: 1.4rem 1.5rem;
+  color: var(--moss);
+  background: rgba(251, 253, 249, 0.55);
+}
+.stApp .empty strong { display: block; color: var(--canopy); font-size: 1.1rem; margin-bottom: 0.25rem; }
+.stApp .empty__image {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+}
+@media (max-width: 640px) { .stApp .empty__image { display: none; } }
+
+/* Result: a garden plant tag, hole punched at the top */
+.stApp .tag {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--leaf);
+  border-radius: 10px;
+  padding: 2.4rem 1.5rem 1.4rem;
+}
+.stApp .tag::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  border-radius: 50%;
+  background: var(--mist);
+  border: 1px solid var(--line);
+}
+.stApp .tag--disease { border-top-color: var(--tomato); }
+.stApp .tag--unsure { border-top-color: var(--ochre); }
+
+.stApp .tag__chip {
+  display: inline-block;
+  padding: 0.15rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.stApp .tag__chip--healthy { background: var(--leaf-bg); color: #1f5a37; }
+.stApp .tag__chip--disease { background: var(--tomato-bg); color: #9a2415; }
+.stApp .tag__chip--unsure { background: var(--ochre-bg); color: #7d5410; }
+
+.stApp .tag__title {
+  font-family: "Young Serif", Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--canopy);
+  margin: 0.6rem 0 0;
+  padding: 0;
+}
+.stApp .tag__lead { margin: 0.35rem 0 0; color: var(--moss); }
+.stApp .tag__heading { font-size: 1rem; font-weight: 600; margin: 1.3rem 0 0.3rem; padding: 0; }
+.stApp .tag p { max-width: 56ch; }
+.stApp .tag__actions { margin: 0; padding-left: 1.2rem; max-width: 56ch; }
+.stApp .tag__actions li { margin: 0.25rem 0; }
+.stApp .tag__tip { margin: 1.1rem 0 0; }
+
+/* Score bars */
+.stApp .scores__title { margin: 1.75rem 0 0.5rem; font-weight: 600; }
+.stApp .scores { list-style: none; margin: 0; padding: 0; }
+.stApp .scores__row {
+  display: grid;
+  grid-template-columns: minmax(0, 11rem) 1fr 3.5rem;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.3rem 0;
+  margin: 0;
+  color: var(--moss);
+}
+.stApp .scores__row--top { color: var(--canopy); font-weight: 600; }
+.stApp .scores__bar { display: block; height: 8px; background: #d8e3d4; border-radius: 4px; overflow: hidden; }
+.stApp .scores__fill { display: block; height: 100%; border-radius: 4px; }
+.stApp .scores__fill--healthy { background: var(--leaf); }
+.stApp .scores__fill--disease { background: var(--tomato); }
+.stApp .scores__pct { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* Fine print */
+.stApp .fineprint {
+  color: var(--moss);
+  font-size: 0.875rem;
+  max-width: 72ch;
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}

@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Logs / temporary files
+*.log
+*.tmp
+*.temp
+
+# Testing / cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Datasets
+data/
+dataset/
+datasets/
+final_data/
+
+# Training outputs
+logs/
+runs/
+checkpoints/
+
+# Do NOT ignore trained models
+# models/tomato_leaf_disease.h5
+# models/tomato_leaf_disease.keras
