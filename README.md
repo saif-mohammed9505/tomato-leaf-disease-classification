@@ -273,3 +273,18 @@ https://github.com/saif-mohammed9505
 
 This project is intended for educational and experimental purposes.
 
+## ⚠️ Model File
+
+The trained model file is **not included in this GitHub repository** because of its large file size.
+
+The project can be reproduced by running the training notebook:
+
+`tomato_leaf.ipynb`
+
+After training, the model will be saved as:
+
+- `tomato_leaf_disease.h5`
+- `tomato_leaf_disease.keras`
+
+The model files are intentionally excluded from the repository to keep the project lightweight and avoid GitHub file-size limitations.
+
